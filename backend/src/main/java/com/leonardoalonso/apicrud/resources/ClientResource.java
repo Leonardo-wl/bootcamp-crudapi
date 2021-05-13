@@ -1,6 +1,6 @@
 package com.leonardoalonso.apicrud.resources;
 
-import com.leonardoalonso.apicrud.entities.Client;
+import com.leonardoalonso.apicrud.dto.ClientDTO;
 import com.leonardoalonso.apicrud.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +18,8 @@ public class ClientResource {
     private ClientService clientService;
 
     @GetMapping
-    public ResponseEntity<List<Client>> findAll() {
-        List<Client> list =  clientService.findAll();
+    public ResponseEntity<List<ClientDTO>> findAll() {
+        List<ClientDTO> list =  clientService.findAll();
         return ResponseEntity.ok().body(list);
     }
 }
